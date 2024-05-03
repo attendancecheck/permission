@@ -45,7 +45,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 9999; /* Ensure it's on top of everything */
+      z-index: 9999;
     }
     .closeButton {
       position: absolute;
@@ -72,14 +72,11 @@
 
 <script>
   function opennewbox() {
-    // Create the new box element
     var extraBox = document.createElement('div');
     extraBox.id = 'extraBox';
 
-    // Add text content
     extraBox.innerHTML = '<p>This is the extra box content.</p>';
 
-    // Add a close button
     var closeButton = document.createElement('span');
     closeButton.classList.add('closeButton');
     closeButton.innerHTML = 'x';
@@ -88,7 +85,6 @@
     };
     extraBox.appendChild(closeButton);
 
-    // Add a button to link to I refuse
     var irefuseButton = document.createElement('button');
     irefuseButton.classList.add('button');
     irefuseButton.innerHTML = 'I refuse';
@@ -97,7 +93,6 @@
     };
     extraBox.appendChild(irefuseButton);
 
-    // Append the new box to the body
     document.body.appendChild(extraBox);
   }
 </script>
