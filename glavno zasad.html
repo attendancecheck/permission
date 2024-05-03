@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blank Website</title>
+  <style>
+    /* Your existing CSS styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+    #consentBox {
+      background-color: rgb(255, 255, 255);
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      max-width: 80%;
+      text-align: center;
+      position: relative; /* Added for positioning the new box */
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    /* Additional styles for the new box */
+    #extraBox {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      max-width: 60%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999; /* Ensure it's on top of everything */
+    }
+    .closeButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="consentBox">
+  <header>
+    <h1>We value your privacy</h1>
+  </header>
+  <article>
+    <p>We use cookies on our website and services. They help the site work properly and give you a personalized experience, like targeted ads based on your interests (if you want them). To manage your cookie preferences and learn more, click on <a href="privacy_policy.html">Cookie Settings</a>. You can also find more information about cookies and your rights in our <a href="privacy_policy.html">Privacy Policy</a>.</p>
+  </article>
+  <footer>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfaOmdw7eDqdHnNtAGGhv-SedBsCski4Nqn1TkWQfOxcc5ipA/viewform?usp=pp_url&entry.366340186=Present" class="button" target="_self">I Agree</a>
+    <button onclick="opennewbox()" class="button">Read more</button>
+  </footer>
+</div>
+
+<script>
+  function opennewbox() {
+    // Create the new box element
+    var extraBox = document.createElement('div');
+    extraBox.id = 'extraBox';
+
+    // Add text content
+    extraBox.innerHTML = '<p>This is the extra box content.</p>';
+
+    // Add a close button
+    var closeButton = document.createElement('span');
+    closeButton.classList.add('closeButton');
+    closeButton.innerHTML = 'x';
+    closeButton.onclick = function() {
+      extraBox.remove();
+    };
+    extraBox.appendChild(closeButton);
+
+    // Add a button to link to I refuse
+    var irefuseButton = document.createElement('button');
+    irefuseButton.classList.add('button');
+    irefuseButton.innerHTML = 'I refuse';
+    irefuseButton.onclick = function() {
+      window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScYWwrctTxElUBB_oLV0QP1HWX-fKP_gw9k7RkuC9XH96zKDQ/viewform?usp=pp_url&entry.189851943=Present';
+    };
+    extraBox.appendChild(irefuseButton);
+
+    // Append the new box to the body
+    document.body.appendChild(extraBox);
+  }
+</script>
+
+</body>
+</html>
