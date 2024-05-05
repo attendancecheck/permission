@@ -43,6 +43,7 @@
       max-width: 80%;
       position: absolute;
       top: 50%;
+      left: 20%;
       transform: translate(-50%, -50%);
       z-index: 9999;
     }
@@ -78,7 +79,7 @@
 
     var closeButton = document.createElement('span');
     closeButton.classList.add('closeButton');
-    closeButton.innerHTML = 'x';
+    closeButton.innerHTML = '❌';
     closeButton.onclick = function() {
       extraBox.remove();
     };
