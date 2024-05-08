@@ -54,6 +54,14 @@
       right: 10px;
       cursor: pointer;
     }
+
+    #acceptButton {
+      margin-right: 10px; /* Add some margin between the buttons */
+    }
+
+    .readMoreButton {
+      background-color: #ccc;
+    }
   </style>
 </head>
 <body>
@@ -66,9 +74,9 @@
     <p>We use cookies on our website and services. They help the site work properly and give you a personalized experience, like targeted ads based on your interests (if you want them). To manage your cookie preferences and learn more, click on Cookie Settings. You can also find more information about cookies and your rights in our Privacy Policy.We use cookies on our website and services. They help the site work properly and give you a personalized experience, like targeted ads based on your interests (if you want them). To manage your cookie preferences and learn more, click on Cookie Settings.</p>
   </article>
   <footer>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfaOmdw7eDqdHnNtAGGhv-SedBsCski4Nqn1TkWQfOxcc5ipA/viewform?usp=pp_url&entry.366340186=Present" class="button" target="_self">I Accept</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfaOmdw7eDqdHnNtAGGhv-SedBsCski4Nqn1TkWQfOxcc5ipA/viewform?usp=pp_url&entry.366340186=Present" id="acceptButton" class="button" target="_self">I Accept</a>
+    <button onclick="opennewbox()" class="button readMoreButton">Read more</button>
   </footer>
-  <button onclick="opennewbox()" class="button">Read more</button>
 </div>
 
 <script>
